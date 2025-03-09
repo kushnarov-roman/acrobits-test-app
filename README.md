@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+# Acrobits Inventory Management Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A minimal React + TypeScript application for managing items of three types (Electronics, Clothing, Groceries), supporting CRUD operations, filtering, and adapter-based data persistence (in-memory or local storage).
 
-## Available Scripts
+## How to Install Locally
 
-In the project directory, you can run:
+1. **Clone the repo**:
+   ```bash
+   git clone https://github.com/kushnarov-roman/acrobits-test-app.git
+   ```
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-### `npm start`
+## How to Run Locally
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. **Development Mode**:
+   ```bash
+   npm start
+   *Access at http://localhost:3000.*
+   ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Trade-Offs / Assumptions
 
-### `npm test`
+In-Memory vs Local Storage: Data in memory resets on page refresh, while local storage persists. Switching adapters uses separate data sets.
+P.S: Data in memory also resets on change of "Persistence Type". It could be fixed if we use useRef instead of just useState.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Validation: Basic checks (e.g., no negative values). You can extend validation with form libraries if needed.
